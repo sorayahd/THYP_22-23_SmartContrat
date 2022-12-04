@@ -1,0 +1,26 @@
+{
+  "name": "thyp_22-23_smartcontrat",
+  "version": "1.0.0",
+  "description": "Smart contract pour gerer les biens immobilier(maison,terrain,appartement)",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sorayahd/THYP_22-23_SmartContrat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sorayahd/THYP_22-23_SmartContrat/issues"
+  },
+  "homepage": "https://github.com/sorayahd/THYP_22-23_SmartContrat#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "web3": "^1.8.1"
+  }
+}

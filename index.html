@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CONNECTION TO METAMASK</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
+    <style>
+        body {
+            background-color: #B6D19D;
+            font-size: 33px;
+            text-align: center;
+        }
+        button {
+            background-color: #BE9DD1;
+            font-size: 33px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        button:hover {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <br>
+	<button onclick="connectMetamask()">Connexion à MetaMask</button> <br>
+	<p id="accountArea"></p>
+	<button onclick="connectContract()">Connexion au Contract</button> <br>
+	<p id="contractArea"></p>
+	<button onclick="readContract()">Obtenir les données</button> <br>
+	<p id="dataArea"></p>
+
+
+    <script>
+        //1- connexion à metamask via l'interface
+        let account;
+        const connectMetamask = async () => {
+            if(window.ethereum !== "undefined") {
+                const accounts = await ethereum.request({method: "eth_requestAccounts"});
+                account = accounts[0];
+                document.getElementById("accountArea").innerHTML = account;
+            }
+        }
+
+        //2- connexion au smart contract via l'interface
+        const connectContract = async () => {
+            const ABI =[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_proprietaire",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_price",
+				"type": "uint256"
+			},
+			{
+				"internalType": "enum TestContract.typeBien",
+				"name": "_typeBien",
+				"type": "uint8"
+			}
+		],
+		"name": "addBien",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_proprietaire",
+				"type": "address"
+			}
+		],
+		"name": "getBiens",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum TestContract.typeBien",
+						"name": "_typeBien",
+						"type": "uint8"
+					}
+				],
+				"internalType": "struct TestContract.bien[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getMesBiens",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum TestContract.typeBien",
+						"name": "_typeBien",
+						"type": "uint8"
+					}
+				],
+				"internalType": "struct TestContract.bien[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_proprietaire",
+				"type": "address"
+			}
+		],
+		"name": "getNombreBiens",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+
+
+            const Address = "0x5B38Da6a701c568545dCfcB03FcB875f56beddC4";
+            window.web3 = await new Web3(window.ethereum);
+            window.contract = await new window.web3.eth.Contract( ABI, Address); 
+            document.getElementById("contractArea").innerHTML = "connected to smart contract";
+        }
+
+        //3-lire les données su smart contract (récuperer les bien)
+        const readContract = async () => {
+            const data = await window.contract.methods.getMesBiens().call();
+            document.getElementById("dataArea").innerHTML = data;
+        }
+    </script>
+</body>
+</html>
