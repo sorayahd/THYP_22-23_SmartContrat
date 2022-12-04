@@ -15,7 +15,8 @@ struct bien {  // apparteement bien ou maison ou terrain
 
 uint compteur;
 
-mapping(address => bien[]) Possessions; // un proprietaire est representé par une adresse d'un compte eth peut osseder 0 ou plusieurs bien
+mapping(address => bien[]) Possessions; 
+// un proprietaire est representé par une adresse d'un compte eth peut osseder 0 ou plusieurs bien
 
 
 // fonctionnalité pour ajouter un bien ,on aura besoin de l'adresse du proprietaire,nom,prix,et le type

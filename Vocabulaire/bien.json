@@ -1,0 +1,136 @@
+[
+    {
+    "@context": "http://localhost/omeka-s-3.2.3/omeka-s/api-context",
+    "@id": "http://localhost/omeka-s-3.2.3/omeka-s/api/items/6",
+    "@type": [
+    "o:Item",
+    "jdc:Bien"
+    ],
+    "o:id": 6,
+    "o:is_public": true,
+    "o:owner": {
+    "@id": "http://localhost/omeka-s-3.2.3/omeka-s/api/users/1",
+    "o:id": 1
+    },
+    "o:resource_class": {
+    "@id": "http://localhost/omeka-s-3.2.3/omeka-s/api/resource_classes/108",
+    "o:id": 108
+    },
+    "o:resource_template": {
+    "@id": "http://localhost/omeka-s-3.2.3/omeka-s/api/resource_templates/3",
+    "o:id": 3
+    },
+    "o:thumbnail": null,
+    "o:title": "maison",
+    "thumbnail_display_urls": {
+    "large": null,
+    "medium": null,
+    "square": null
+    },
+    "o:created": {
+    "@value": "2022-12-04T19:18:45+00:00",
+    "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:modified": {
+    "@value": "2022-12-04T19:18:45+00:00",
+    "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:media": [],
+    "o:item_set": [],
+    "o:site": [],
+    "jdc:TypedeBien": [
+    {
+    "type": "literal",
+    "property_id": 185,
+    "property_label": "TypedeBien",
+    "is_public": true,
+    "@value": "maison"
+    }
+    ],
+    "jdc:TailleduBien": [
+    {
+    "type": "literal",
+    "property_id": 186,
+    "property_label": "TailleduBien",
+    "is_public": true,
+    "@value": "F2"
+    }
+    ],
+    "dcterms:title": [
+    {
+    "type": "literal",
+    "property_id": 1,
+    "property_label": "Title",
+    "is_public": true,
+    "@value": "maison"
+    }
+    ]
+    },
+    {
+    "@context": "http://localhost/omeka-s-3.2.3/omeka-s/api-context",
+    "@id": "http://localhost/omeka-s-3.2.3/omeka-s/api/items/7",
+    "@type": [
+    "o:Item",
+    "jdc:Bien"
+    ],
+    "o:id": 7,
+    "o:is_public": true,
+    "o:owner": {
+    "@id": "http://localhost/omeka-s-3.2.3/omeka-s/api/users/1",
+    "o:id": 1
+    },
+    "o:resource_class": {
+    "@id": "http://localhost/omeka-s-3.2.3/omeka-s/api/resource_classes/108",
+    "o:id": 108
+    },
+    "o:resource_template": {
+    "@id": "http://localhost/omeka-s-3.2.3/omeka-s/api/resource_templates/3",
+    "o:id": 3
+    },
+    "o:thumbnail": null,
+    "o:title": "appartement",
+    "thumbnail_display_urls": {
+    "large": null,
+    "medium": null,
+    "square": null
+    },
+    "o:created": {
+    "@value": "2022-12-04T19:23:24+00:00",
+    "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:modified": {
+    "@value": "2022-12-04T19:23:24+00:00",
+    "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "o:media": [],
+    "o:item_set": [],
+    "o:site": [],
+    "jdc:TypedeBien": [
+    {
+    "type": "literal",
+    "property_id": 185,
+    "property_label": "TypedeBien",
+    "is_public": true,
+    "@value": "appartement"
+    }
+    ],
+    "jdc:TailleduBien": [
+    {
+    "type": "literal",
+    "property_id": 186,
+    "property_label": "TailleduBien",
+    "is_public": true,
+    "@value": "F2"
+    }
+    ],
+    "dcterms:title": [
+    {
+    "type": "literal",
+    "property_id": 1,
+    "property_label": "Title",
+    "is_public": true,
+    "@value": "appartement"
+    }
+    ]
+    }
+    ]
